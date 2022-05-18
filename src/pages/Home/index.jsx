@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import headerImg from "../../assets/images/header.svg";
 import whyImg from "../../assets/images/pic_whyspeakerseeker.png";
 import iconSpeaker from "../../assets/images/icon_speaker.svg";
@@ -13,8 +13,22 @@ import Navbar from "../../component/Navbar";
 import Button from "../../component/Button";
 import SpeakerCard from "../../component/SpeakerCard";
 import Footer from "../../component/Footer";
+import { getAllSpeaker } from "../../api/model/speaker";
 
 const Home = () => {
+  const [speakers, setSpeakers] = useState([]);
+
+  const fetchSpeakers = async () => {
+    try {
+      const res = await getAllSpeaker();
+      setSpeakers(res.data.data);
+    } catch (error) {}
+  };
+
+  useEffect(() => {
+    fetchSpeakers();
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -98,42 +112,24 @@ const Home = () => {
             </div>
           </div>
           <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-24 gap-5 mx-auto">
-            <SpeakerCard
-              image={vina}
-              name="Vina Muliana"
-              job="Content Creator & Staff Mind ID"
-              desc="Communication specialist with a demonstrated history of working in the online media industry. Strong media and communication professional"
-              rating="4.9"
-              place="jakarta"
-              eventCount={26}
-              skill="Public Speaking, Public Relations, Marketing & Management, Editing"
-              language="English, Indonesia"
-              price="1.500.000"
-            />
-            <SpeakerCard
-              image={vina}
-              name="Vina Muliana"
-              job="Content Creator & Staff Mind ID"
-              desc="Communication specialist with a demonstrated history of working in the online media industry. Strong media and communication professional"
-              rating="4.9"
-              place="jakarta"
-              eventCount={26}
-              skill="Public Speaking, Public Relations, Marketing & Management, Editing"
-              language="English, Indonesia"
-              price="1.500.000"
-            />
-            <SpeakerCard
-              image={vina}
-              name="Vina Muliana"
-              job="Content Creator & Staff Mind ID"
-              desc="Communication specialist with a demonstrated history of working in the online media industry. Strong media and communication professional"
-              rating="4.9"
-              place="jakarta"
-              eventCount={26}
-              skill="Public Speaking, Public Relations, Marketing & Management, Editing"
-              language="English, Indonesia"
-              price="1.500.000"
-            />
+            {speakers.map((item, key) => {
+              return (
+                <SpeakerCard
+                  id={item.ID}
+                  image={vina}
+                  key={key}
+                  name={item.name}
+                  job={item.header_title}
+                  desc={item.header}
+                  rating="4.9"
+                  place={item.location}
+                  eventCount={26}
+                  skill="Public Speaking, Public Relations, Marketing & Management, Editing"
+                  language="English, Indonesia"
+                  price={item.virtual_fee_start}
+                />
+              );
+            })}
           </div>
         </div>
       </div>
