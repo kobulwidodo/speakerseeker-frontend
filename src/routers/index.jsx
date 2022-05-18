@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import Login from "../pages/Login";
+import Register from "../pages/Register";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -17,7 +18,8 @@ const Routers = () => {
     <BrowserRouter>
       <ScrollToTop />
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </BrowserRouter>
   );
