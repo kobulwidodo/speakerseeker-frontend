@@ -53,6 +53,7 @@ export const UserWrapper = ({ children }) => {
     if (isAuthenticated) {
       fetchUser();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAuthenticated]);
 
   return (
