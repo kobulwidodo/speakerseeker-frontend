@@ -7,7 +7,6 @@ import pictSpeaker from "../../assets/images/pic_find_speaker.svg";
 import pictChat from "../../assets/images/pic_chat.svg";
 import picBook from "../../assets/images/pic_booked.svg";
 import picTransaction from "../../assets/images/pic_transaction.svg";
-import vina from "../../assets/images/vina.png";
 import searchIcon from "../../assets/images/search.svg";
 import Navbar from "../../component/Navbar";
 import Button from "../../component/Button";
@@ -108,7 +107,12 @@ const Home = () => {
               <br /> <span className="text-[#34364A]">Speakers</span>
             </p>
             <div className="flex-shrink-0">
-              <Button label="More Speakers" className="w-auto" />
+              <Button
+                label="More Speakers"
+                isLink={true}
+                to="/speakers"
+                className="w-auto"
+              />
             </div>
           </div>
           <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-24 gap-5 mx-auto">
@@ -116,7 +120,7 @@ const Home = () => {
               return (
                 <SpeakerCard
                   id={item.ID}
-                  image={vina}
+                  image={item.img_path}
                   key={key}
                   name={item.name}
                   job={item.header_title}
