@@ -8,17 +8,23 @@ import { getAllSpeaker } from "../../api/model/speaker";
 
 const Speakers = () => {
   const [speakers, setSpeakers] = useState([]);
+  const [query, setQuery] = useState("");
 
   const fetchData = async () => {
     try {
-      const res = await getAllSpeaker();
+      const res = await getAllSpeaker(query);
       setSpeakers(res.data.data);
     } catch (error) {}
   };
 
   useEffect(() => {
     fetchData();
-  }, []);
+    console.log("query");
+  }, [query]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
 
   return (
     <>
@@ -30,7 +36,7 @@ const Speakers = () => {
         <div className="flex flex-col sm:flex-row sm:justify-between">
           <h1 className="font-medium text-2xl text-center">Find a speaker</h1>
           <form
-            action=""
+            onSubmit={handleSubmit}
             className="flex flex-row gap-x-5 px-4 border-2 rounded-full text-base py-3 border-[#E5E5E5] mt-5 sm:mt-0"
           >
             <img src={searchIcon} className="w-4" alt="" />
@@ -38,6 +44,7 @@ const Speakers = () => {
               type="text"
               className="appearance-none bg-[#FEFEFE] w-full flex-auto focus:outline-none"
               placeholder="Search for speakers"
+              onChange={(e) => setQuery(e.target.value)}
             />
           </form>
         </div>

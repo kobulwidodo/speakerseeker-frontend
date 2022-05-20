@@ -1,7 +1,7 @@
 import { coreApi } from "..";
 
-export const getAllSpeaker = () => {
-  return coreApi.get("/speakers/");
+export const getAllSpeaker = (query = "") => {
+  return coreApi.get(`/speakers/?name=${query}`);
 };
 
 export const getSpeakerById = (id) => {
