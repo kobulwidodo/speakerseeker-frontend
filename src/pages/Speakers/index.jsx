@@ -46,7 +46,7 @@ const Speakers = () => {
           {speakers.map((item, key) => {
             let arrSkill = [];
             item.speaker_skills?.map((item) => {
-              arrSkill.push(item.title);
+              return arrSkill.push(item.title);
             });
             const skill = arrSkill.join(", ");
             return (
