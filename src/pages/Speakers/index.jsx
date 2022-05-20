@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../../component/Navbar";
 import SpeakerCard from "../../component/SpeakerCard";
-import vina from "../../assets/images/vina.png";
 import searchIcon from "../../assets/images/search.svg";
 import Footer from "../../component/Footer";
 import Breadcrumb from "../../component/Breadcrumb";
@@ -53,7 +52,7 @@ const Speakers = () => {
               <SpeakerCard
                 id={item.ID}
                 outline="outline-white"
-                image={vina}
+                image={item.img_path}
                 key={key}
                 name={item.name}
                 job={item.header_title}

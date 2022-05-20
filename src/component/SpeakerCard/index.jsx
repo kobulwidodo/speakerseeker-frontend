@@ -8,6 +8,7 @@ import iconPrice from "../../assets/images/icon_price.svg";
 import Button from "../Button";
 import classNames from "classnames";
 import slug from "slug";
+import { getImage } from "../../api/model/speaker";
 
 export const SpeakerCard = ({
   image,
@@ -28,7 +29,7 @@ export const SpeakerCard = ({
   return (
     <div className="bg-[#FEFEFE] relative overflow-visible px-9 border border-[#E5E5E5] rounded-2xl pb-9 mt-20 sm:mt-18 lg:mt-0">
       <img
-        src={image}
+        src={getImage(image)}
         className={classNames(
           "absolute inset-x-1/2 -translate-x-1/2 -top-16 rounded-full outline outline-[#E9F2FF] outline-8",
           outline

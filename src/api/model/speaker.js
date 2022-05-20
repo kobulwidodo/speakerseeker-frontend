@@ -7,3 +7,7 @@ export const getAllSpeaker = () => {
 export const getSpeakerById = (id) => {
   return coreApi.get(`/speakers/${id}`);
 };
+
+export const getImage = (path) => {
+  return coreApi.getUri() + `/${path}`;
+};
