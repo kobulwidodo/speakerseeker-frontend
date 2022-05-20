@@ -19,7 +19,7 @@ const Speakers = () => {
 
   useEffect(() => {
     fetchData();
-    console.log("query");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [query]);
 
   const handleSubmit = (e) => {
