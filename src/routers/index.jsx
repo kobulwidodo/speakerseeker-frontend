@@ -4,6 +4,7 @@ import { UserWrapper } from "../context/UserContext";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import Speakers from "../pages/Speakers";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -24,6 +25,7 @@ const Routers = () => {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/speakers" element={<Speakers />} />
         </Routes>
       </UserWrapper>
     </BrowserRouter>
