@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import image from "../../assets/images/pic_signin.svg";
 import google from "../../assets/images/logo_google.svg";
 import or from "../../assets/images/or.svg";
-import Input from "../../component/Input";
-import Button from "../../component/Button";
+import Input from "../../components/Input";
+import Button from "../../components/Button";
 
 const Register = () => {
   return (

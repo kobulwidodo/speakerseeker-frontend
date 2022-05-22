@@ -8,10 +8,10 @@ import pictChat from "../../assets/images/pic_chat.svg";
 import picBook from "../../assets/images/pic_booked.svg";
 import picTransaction from "../../assets/images/pic_transaction.svg";
 import searchIcon from "../../assets/images/search.svg";
-import Navbar from "../../component/Navbar";
-import Button from "../../component/Button";
-import SpeakerCard from "../../component/SpeakerCard";
-import Footer from "../../component/Footer";
+import Navbar from "../../components/Navbar";
+import Button from "../../components/Button";
+import SpeakerCard from "../../components/SpeakerCard";
+import Footer from "../../components/Footer";
 import { getAllSpeaker } from "../../api/model/speaker";
 
 const Home = () => {

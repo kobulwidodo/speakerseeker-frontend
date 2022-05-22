@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../../component/Navbar";
-import SpeakerCard from "../../component/SpeakerCard";
+import Navbar from "../../components/Navbar";
+import SpeakerCard from "../../components/SpeakerCard";
 import searchIcon from "../../assets/images/search.svg";
-import Footer from "../../component/Footer";
-import Breadcrumb from "../../component/Breadcrumb";
+import Footer from "../../components/Footer";
+import Breadcrumb from "../../components/Breadcrumb";
 import { getAllSpeaker } from "../../api/model/speaker";
 
 const Speakers = () => {
