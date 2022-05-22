@@ -155,7 +155,7 @@ const SpeakersDetail = () => {
                 </div>
                 <div className="flex flex-row items-center gap-x-3">
                   <img src={linkedin} alt="" />
-                  <p className="text-lg">{speaker.linkedid}</p>
+                  <p className="text-lg">{speaker.linkedin}</p>
                 </div>
               </div>
             </CardAbout>
