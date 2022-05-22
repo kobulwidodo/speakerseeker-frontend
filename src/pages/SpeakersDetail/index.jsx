@@ -12,7 +12,6 @@ import Footer from "../../components/Footer";
 import slug from "slug";
 import { useParams } from "react-router-dom";
 import { getImage, getSpeakerById } from "../../api/model/speaker";
-import Speakers from "../Speakers";
 
 const SpeakersDetail = () => {
   const { id } = useParams();
