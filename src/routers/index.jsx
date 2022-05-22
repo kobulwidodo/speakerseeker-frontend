@@ -5,6 +5,7 @@ import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Speakers from "../pages/Speakers";
+import SpeakersDetail from "../pages/SpeakersDetail";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -26,6 +27,7 @@ const Routers = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/speakers" element={<Speakers />} />
+          <Route path="/speakers/:id/:name" element={<SpeakersDetail />} />
         </Routes>
       </UserWrapper>
     </BrowserRouter>
