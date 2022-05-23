@@ -26,7 +26,7 @@ export const UserWrapper = ({ children }) => {
       config.headers.Authorization = `Bearer ${token}`;
       return config;
     });
-    localStorage.setItem("tg_token", token);
+    localStorage.setItem("ss_token", token);
     setIsAuthenticated(true);
   };
 
