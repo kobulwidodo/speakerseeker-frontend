@@ -2,7 +2,7 @@ import classNames from "classnames";
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Button = ({ label, type, icon, className, isLink, to }) => {
+const Button = ({ label, type, icon, className, isLink, to, isSubmit }) => {
   const classname = classNames(
     "bg-[#7098E0] text-white text-lg font-normal py-2 px-7 rounded-full",
     {
@@ -34,7 +34,7 @@ const Button = ({ label, type, icon, className, isLink, to }) => {
             {icon ? (
               <img src={icon} className="mr-3" width="25" alt="" />
             ) : null}
-            {label}
+            {isSubmit ? "Loading..." : label}
           </div>
         </button>
       )}
