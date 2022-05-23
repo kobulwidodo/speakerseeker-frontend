@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import { UserWrapper } from "../context/UserContext";
-import BookSpeaker from "../pages/BookSpeaker";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
@@ -33,9 +32,7 @@ const Routers = () => {
           </Route>
           <Route path="/speakers" element={<Speakers />} />
           <Route path="/speakers/:id/:name" element={<SpeakersDetail />} />
-          <Route element={<ProtectedRoute />}>
-            <Route path="/speakers/:id/:name/book" element={<BookSpeaker />} />
-          </Route>
+          <Route element={<ProtectedRoute />}></Route>
         </Routes>
       </UserWrapper>
     </BrowserRouter>
