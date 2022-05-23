@@ -35,7 +35,7 @@ const SpeakersDetail = () => {
   }, [id]);
 
   const slugName = slug(speaker.name ?? "");
-  const link = `/speakers/1/${slugName}/book`;
+  const link = `/speakers/${id}/${slugName}/book`;
   return (
     <>
       <Navbar />
@@ -161,7 +161,7 @@ const SpeakersDetail = () => {
             </CardAbout>
           </div>
           <CardAbout className="md:w-3/5">
-            <CardAbout.Title label="About Vina Muliana" />
+            <CardAbout.Title label={`About ${speaker.name}`} />
             <p className="text-black/40 text-justify text-lg mt-4 whitespace-pre-wrap">
               {speaker.about}
             </p>
