@@ -9,6 +9,8 @@ const Input = ({
   className,
   isRequired,
   margin = "mb-4",
+  errorText,
+  ...other
 }) => {
   return (
     <div className={margin}>
@@ -19,11 +21,15 @@ const Input = ({
         type={type}
         name={name}
         placeholder={placeholder}
+        {...other}
         className={classNames(
           className,
           "bg-[#FEFEFE] rounded-full text-base placeholder:text-[#909090] placeholder:text-light w-full border border-[#BFBEBE] py-3.5 px-6"
         )}
       />
+      {errorText ? (
+        <span className="text-xs text-red-600">{errorText}</span>
+      ) : null}
     </div>
   );
 };
