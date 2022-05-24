@@ -67,6 +67,7 @@ const Register = () => {
       try {
         setIsSubmit(true);
         if (data.password.value !== data.confirm_password.value) {
+          // eslint-disable-next-line
           throw "confirm password tidak sesuai";
         }
         const res = await registerUser(

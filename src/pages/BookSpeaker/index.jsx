@@ -308,7 +308,7 @@ const BookSpeaker = () => {
           </div>
         </div>
         <div className="text-center mt-10">
-          <Button label="Submit Booking" />
+          <Button label="Submit Booking" isSubmit={isSubmit} />
         </div>
       </form>
       <Footer />

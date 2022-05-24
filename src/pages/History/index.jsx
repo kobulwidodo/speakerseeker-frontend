@@ -17,6 +17,7 @@ const History = () => {
     try {
       const res = await getTransactionByUser();
       setData(res.data.data);
+      console.log(query);
     } catch (error) {}
   };
 
