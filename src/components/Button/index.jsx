@@ -2,7 +2,17 @@ import classNames from "classnames";
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Button = ({ label, type, icon, className, isLink, to, isSubmit }) => {
+const Button = ({
+  label,
+  type,
+  icon,
+  className,
+  isLink,
+  to,
+  isSubmit,
+  onClick,
+  state = {},
+}) => {
   const classname = classNames(
     "bg-[#7098E0] text-white text-lg font-normal py-2 px-7 rounded-full",
     {
@@ -14,11 +24,12 @@ const Button = ({ label, type, icon, className, isLink, to, isSubmit }) => {
   return (
     <>
       {isLink ? (
-        <Link to={to} className={classname}>
+        <Link to={to} className={classname} state={state}>
           {label}
         </Link>
       ) : (
         <button
+          onClick={onClick}
           type="submit"
           name="submit"
           className={classNames(
