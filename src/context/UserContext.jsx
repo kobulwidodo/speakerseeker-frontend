@@ -4,7 +4,7 @@ import { getUser } from "../api/model/user";
 import useSnackbar from "../hooks/useSnackbar";
 
 export const defaultValue = {
-  isAuthenticated: !!localStorage.getItem("tg_token"),
+  isAuthenticated: !!localStorage.getItem("ss_token"),
   userInfo: null,
   login: () => {},
   logout: () => {},
@@ -33,7 +33,7 @@ export const UserWrapper = ({ children }) => {
   const logout = () => {
     setIsAuthenticated(false);
     setUserInfo({});
-    localStorage.removeItem("tg_token");
+    localStorage.removeItem("ss_token");
     coreApi.defaults.headers.common["Authorization"] = "";
     snackbar.success("Successfully logout");
   };
