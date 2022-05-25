@@ -238,7 +238,7 @@ const BookSpeaker = () => {
               <CardAbout.HeaderTitle label="Your Detail Event" />
               <div className="opacity-90">
                 <Input
-                  label="Speaking To"
+                  label="Event Name"
                   name="event_name"
                   type="text"
                   onChange={handleChange}
