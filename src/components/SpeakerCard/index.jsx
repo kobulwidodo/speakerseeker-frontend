@@ -9,6 +9,7 @@ import Button from "../Button";
 import classNames from "classnames";
 import slug from "slug";
 import { getImage } from "../../api/model/speaker";
+import NumberFormat from "react-number-format";
 
 export const SpeakerCard = ({
   image,
@@ -27,7 +28,7 @@ export const SpeakerCard = ({
   const slugName = slug(name);
   const link = `/speakers/${id}/${slugName}`;
   return (
-    <div className="bg-[#FEFEFE] relative overflow-visible px-9 border border-[#E5E5E5] rounded-2xl pb-9 mt-20 sm:mt-18 lg:mt-0">
+    <div className="bg-[#FEFEFE] flex flex-col relative overflow-visible px-9 border border-[#E5E5E5] rounded-2xl pb-9 mt-20 sm:mt-18 lg:mt-0">
       <img
         src={getImage(image)}
         className={classNames(
@@ -77,15 +78,22 @@ export const SpeakerCard = ({
         </div>
         <p className="text-[#151515] font-light text-sm ml-3">{language}</p>
       </div>
-      <div className="flex flex-row mt-3">
+      <div className="flex flex-row mt-3 mb-10">
         <div className="flex-shrink-0">
           <img src={iconPrice} className="" alt="" />
         </div>
         <p className="text-[#151515] font-light text-sm ml-3">
-          Start from Rp {price}
+          Start from Rp{" "}
+          {
+            <NumberFormat
+              value={price}
+              thousandSeparator={true}
+              displayType={"text"}
+            />
+          }
         </p>
       </div>
-      <div className="text-center mt-10">
+      <div className="text-center mt-auto">
         <Button
           label="View Profile"
           isLink={true}

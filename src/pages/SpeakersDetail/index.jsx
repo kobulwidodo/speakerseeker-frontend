@@ -12,6 +12,7 @@ import Footer from "../../components/Footer";
 import slug from "slug";
 import { useParams } from "react-router-dom";
 import { getImage, getSpeakerById } from "../../api/model/speaker";
+import NumberFormat from "react-number-format";
 
 const SpeakersDetail = () => {
   const { id } = useParams();
@@ -94,8 +95,22 @@ const SpeakersDetail = () => {
                   <div className="flex animate-pulse items-center flex-1 h-5 bg-slate-300 rounded mt-1"></div>
                 ) : (
                   <p className="text-black/70">
-                    Rp {speaker.virtual_fee_start} - Rp{" "}
-                    {speaker.virtual_fee_stop}
+                    Rp{" "}
+                    {
+                      <NumberFormat
+                        value={speaker.virtual_fee_start}
+                        thousandSeparator={true}
+                        displayType={"text"}
+                      />
+                    }{" "}
+                    - Rp{" "}
+                    {
+                      <NumberFormat
+                        value={speaker.virtual_fee_stop}
+                        thousandSeparator={true}
+                        displayType={"text"}
+                      />
+                    }
                   </p>
                 )}
               </div>
@@ -105,7 +120,22 @@ const SpeakersDetail = () => {
                   <div className="flex animate-pulse items-center flex-1 h-5 bg-slate-300 rounded mt-1"></div>
                 ) : (
                   <p className="text-black/70">
-                    Rp {speaker.site_fee_start} - Rp {speaker.site_fee_stop}
+                    Rp{" "}
+                    {
+                      <NumberFormat
+                        value={speaker.site_fee_start}
+                        thousandSeparator={true}
+                        displayType={"text"}
+                      />
+                    }{" "}
+                    - Rp{" "}
+                    {
+                      <NumberFormat
+                        value={speaker.site_fee_stop}
+                        thousandSeparator={true}
+                        displayType={"text"}
+                      />
+                    }
                   </p>
                 )}
               </div>

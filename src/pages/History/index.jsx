@@ -4,6 +4,9 @@ import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import searchIcon from "../../assets/images/search.svg";
 import { getTransactionByUser } from "../../api/model/transaction";
+import NumberFormat from "react-number-format";
+import moment from "moment";
+import Status from "../../components/Status";
 
 const History = () => {
   const [query, setQuery] = useState("");
@@ -73,7 +76,7 @@ const History = () => {
                   SS-{trx.ID}
                 </td>
                 <td className="font-medium text-sm py-4 px-3">
-                  {trx.CreatedAt}
+                  {moment(trx.CreatedAt).format("DD/MM/YYYY")}
                 </td>
                 <td className="font-medium text-sm py-4 px-3">
                   {trx.speaker?.name}
@@ -82,13 +85,19 @@ const History = () => {
                   {trx.event_name}
                 </td>
                 <td className="font-medium text-sm py-4 px-3">
-                  {trx.event_date}
+                  {moment(trx.event_date).format("DD/MM/YYYY")}
                 </td>
                 <td className="font-medium text-sm py-4 px-3">
-                  {trx.budget - 1000}
+                  {
+                    <NumberFormat
+                      value={trx.budget - 1000}
+                      displayType={"text"}
+                      thousandSeparator={true}
+                    />
+                  }
                 </td>
                 <td className="font-medium text-sm py-4 pr-5">
-                  {trx.midtrans_transaction?.status}
+                  {<Status status={trx.midtrans_transaction?.status} />}
                 </td>
               </tr>
             ))}

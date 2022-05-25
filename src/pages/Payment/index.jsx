@@ -10,6 +10,7 @@ import { getSpeakerById } from "../../api/model/speaker";
 import { makeTransaction } from "../../api/model/transaction";
 import useSnackbar from "../../hooks/useSnackbar";
 import Breadcrumb from "../../components/Breadcrumb";
+import NumberFormat from "react-number-format";
 
 const Payment = () => {
   const { id } = useParams();
@@ -145,7 +146,14 @@ const Payment = () => {
                   <td className="text-xl pb-3">Fee</td>
                   <td className="text-xl pb-3">:</td>
                   <td className="text-xl pb-3 pl-10">
-                    Rp. {data?.budget.value - 1000}
+                    Rp.{" "}
+                    {
+                      <NumberFormat
+                        value={data?.budget.value - 1000}
+                        thousandSeparator={true}
+                        displayType={"text"}
+                      />
+                    }
                   </td>
                 </tr>
                 <tr>
@@ -164,7 +172,14 @@ const Payment = () => {
           <p className="text-xl mr-28">Total Fee</p>
           <p className="text-xl">:</p>
           <p className="text-xl ml-10 text-[#3F927B]">
-            Rp. {data?.budget.value}
+            Rp.{" "}
+            {
+              <NumberFormat
+                value={data?.budget.value}
+                displayType={"text"}
+                thousandSeparator={true}
+              />
+            }
           </p>
         </div>
       </div>
