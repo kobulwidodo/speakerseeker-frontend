@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import { UserWrapper } from "../context/UserContext";
 import BookSpeaker from "../pages/BookSpeaker";
+import Chat from "../pages/Chat";
 import History from "../pages/History";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
@@ -47,6 +48,7 @@ const Routers = () => {
               element={<PaymentInformation />}
             />
             <Route path="/history-transaction" element={<History />} />
+            <Route path="/chat/:id/:name" element={<Chat />} />
           </Route>
         </Routes>
       </UserWrapper>
