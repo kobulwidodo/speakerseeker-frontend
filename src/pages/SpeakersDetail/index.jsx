@@ -23,7 +23,6 @@ const SpeakersDetail = () => {
     try {
       const res = await getSpeakerById(id);
       setSpeaker(res.data.data);
-      console.log(res.data.data);
     } catch (error) {
     } finally {
       setLoading(false);
@@ -142,7 +141,12 @@ const SpeakersDetail = () => {
             </div>
             <div className="flex flex-row gap-x-5 mt-7">
               <Button label="Book Now" isLink={true} to={link} />
-              <Button label="Live Chat" type="light" />
+              <Button
+                label="Live Chat"
+                isLink={true}
+                to={`/chat/${id}/${slugName}`}
+                type="light"
+              />
             </div>
           </div>
         </div>
