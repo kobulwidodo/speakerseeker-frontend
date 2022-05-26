@@ -199,7 +199,6 @@ const BookSpeaker = () => {
                   isRequired={true}
                   margin="mb-7"
                   option={[
-                    { name: "Master of Ceremonies / Moderator" },
                     { name: "Webinar" },
                     { name: "Trainer / seminar leader" },
                     { name: "Workshop" },
