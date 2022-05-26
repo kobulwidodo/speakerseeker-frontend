@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import vina from "../../assets/images/vina.png";
 import searchIcon from "../../assets/images/send.svg";
 import dotGreen from "../../assets/images/dot_green.svg";
 import {
@@ -25,7 +24,6 @@ const formData = {
 };
 const Chat = () => {
   const [messages, setMessages] = useState([]);
-  const [errors, setErrors] = useState({});
   const [data, setData] = useState(formData);
   const [speaker, setSpeaker] = useState({});
   const { userInfo } = useUserContext();
@@ -77,7 +75,6 @@ const Chat = () => {
         }
       }
     });
-    setErrors(errorsData);
     return Object.keys(errorsData).length < 1;
   };
 
@@ -102,10 +99,10 @@ const Chat = () => {
 
   useEffect(() => {
     fetchSpeaker();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     setTimeout(() => {
       bottomListRef.current.scrollIntoView({ behavior: "smooth" });
     }, 1000);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   return (
