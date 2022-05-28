@@ -10,7 +10,9 @@ import { useLocation } from "react-router-dom";
 const Speakers = () => {
   const [speakers, setSpeakers] = useState([]);
   const location = useLocation();
-  const [query, setQuery] = useState(location.state ?? "");
+  const [query, setQuery] = useState(
+    location.state instanceof String ? location.state : ""
+  );
 
   const fetchData = async () => {
     try {
