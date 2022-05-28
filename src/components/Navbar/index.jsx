@@ -11,7 +11,7 @@ import Button from "../Button";
 const navigation = [
   { name: "Home", href: "/" },
   { name: "Speakers", href: "/speakers" },
-  { name: "Contacts", href: "/contact" },
+  { name: "Contacts", href: "#" },
 ];
 
 function classNames(...classes) {
