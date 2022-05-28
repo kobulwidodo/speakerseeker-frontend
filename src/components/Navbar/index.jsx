@@ -11,7 +11,7 @@ import Button from "../Button";
 const navigation = [
   { name: "Home", href: "/" },
   { name: "Speakers", href: "/speakers" },
-  { name: "Contacts", href: "#" },
+  { name: "Contacts", href: "#contact" },
 ];
 
 function classNames(...classes) {
@@ -55,7 +55,9 @@ const Navbar = () => {
                         className={({ isActive }) => {
                           return classNames(
                             isActive
-                              ? "font-medium text-black"
+                              ? item.name === "Contacts"
+                                ? ""
+                                : "font-medium text-black"
                               : "font-normal text-black hover:text-gray-500",
                             "px-3 py-2 rounded-md text-lg"
                           );
