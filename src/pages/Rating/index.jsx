@@ -8,7 +8,6 @@ import Breadcrumb from "../../components/Breadcrumb";
 import Button from "../../components/Button";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import StarPicker from "../../components/StarPicker";
 import Textarea from "../../components/Textarea";
 import useSnackbar from "../../hooks/useSnackbar";
 
