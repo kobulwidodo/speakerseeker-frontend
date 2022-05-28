@@ -8,6 +8,7 @@ import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Payment from "../pages/Payment";
 import PaymentInformation from "../pages/PaymentInformation";
+import Rating from "../pages/Rating";
 import Register from "../pages/Register";
 import Speakers from "../pages/Speakers";
 import SpeakersDetail from "../pages/SpeakersDetail";
@@ -49,6 +50,7 @@ const Routers = () => {
             />
             <Route path="/history-transaction" element={<History />} />
             <Route path="/chat/:id/:name" element={<Chat />} />
+            <Route path="/rating/:id/:name" element={<Rating />} />
           </Route>
         </Routes>
       </UserWrapper>
