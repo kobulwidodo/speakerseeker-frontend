@@ -33,9 +33,9 @@ const Button = ({
           type="submit"
           name="submit"
           className={classNames(
-            "bg-[#7098E0] text-white text-lg font-normal py-2 px-7 rounded-full",
+            "bg-[#7098E0] text-white text-lg font-normal py-2 px-7 rounded-full hover:bg-[#668ACC]",
             {
-              "bg-[#FFFFFF] border border-[#7098E0] text-[#7098E0] text-center":
+              "bg-[#FFFFFF] border border-[#7098E0] text-[#7098E0] text-center hover:bg-[#E9F2FF]":
                 type === "light",
             },
             className
