@@ -13,15 +13,23 @@ import Button from "../../components/Button";
 import SpeakerCard from "../../components/SpeakerCard";
 import Footer from "../../components/Footer";
 import { getAllSpeaker } from "../../api/model/speaker";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const [speakers, setSpeakers] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
+  const navigate = useNavigate();
 
   const fetchSpeakers = async () => {
     try {
       const res = await getAllSpeaker();
       setSpeakers(res.data.data);
     } catch (error) {}
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate("/speakers", { state: searchQuery });
   };
 
   useEffect(() => {
@@ -42,9 +50,13 @@ const Home = () => {
               in an easy and convenient way.
             </p>
             <div className="flex flex-row bg-[#FEFEFE] rounded-full text-base p-2 max-w-md w-full">
-              <form action="" className="flex flex-row flex-auto gap-x-5 pl-4">
+              <form
+                onSubmit={handleSubmit}
+                className="flex flex-row flex-auto gap-x-5 pl-4"
+              >
                 <img src={searchIcon} className="w-4" alt="" />
                 <input
+                  onChange={(e) => setSearchQuery(e.target.value)}
                   type="text"
                   className="appearance-none bg-transparent w-full flex-auto focus:outline-none"
                   placeholder="Search for speakers"

@@ -5,10 +5,12 @@ import searchIcon from "../../assets/images/search.svg";
 import Footer from "../../components/Footer";
 import Breadcrumb from "../../components/Breadcrumb";
 import { getAllSpeaker } from "../../api/model/speaker";
+import { useLocation } from "react-router-dom";
 
 const Speakers = () => {
   const [speakers, setSpeakers] = useState([]);
-  const [query, setQuery] = useState("");
+  const location = useLocation();
+  const [query, setQuery] = useState(location.state ?? "");
 
   const fetchData = async () => {
     try {
@@ -44,6 +46,7 @@ const Speakers = () => {
               type="text"
               className="appearance-none bg-[#FEFEFE] w-full flex-auto focus:outline-none"
               placeholder="Search for speakers"
+              value={query}
               onChange={(e) => setQuery(e.target.value)}
             />
           </form>
