@@ -10,6 +10,7 @@ import classNames from "classnames";
 import slug from "slug";
 import { getImage } from "../../api/model/speaker";
 import NumberFormat from "react-number-format";
+import { Link } from "react-router-dom";
 
 export const SpeakerCard = ({
   image,
@@ -28,7 +29,10 @@ export const SpeakerCard = ({
   const slugName = slug(name);
   const link = `/speakers/${id}/${slugName}`;
   return (
-    <div className="bg-[#FEFEFE] flex flex-col relative overflow-visible px-9 border border-[#E5E5E5] rounded-2xl pb-9 mt-20 sm:mt-18 lg:mt-0">
+    <Link
+      to={link}
+      className="bg-[#FEFEFE] hover:bg-[#F6FAFF] flex flex-col relative overflow-visible px-9 border border-[#E5E5E5] rounded-2xl pb-9 mt-20 sm:mt-18 lg:mt-0"
+    >
       <img
         src={getImage(image)}
         className={classNames(
@@ -101,7 +105,7 @@ export const SpeakerCard = ({
           className="w-auto"
         />
       </div>
-    </div>
+    </Link>
   );
 };
 
