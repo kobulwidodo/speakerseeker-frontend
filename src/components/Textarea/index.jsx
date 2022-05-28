@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import React from "react";
 
 const Textarea = ({
@@ -7,6 +8,7 @@ const Textarea = ({
   name,
   placeholder,
   errorText,
+  classname,
   ...other
 }) => {
   return (
@@ -20,7 +22,10 @@ const Textarea = ({
         placeholder={placeholder}
         rows={6}
         {...other}
-        className="bg-[#FEFEFE] rounded-xl text-base placeholder:text-[#909090] placeholder:text-light w-full border border-[#BFBEBE] py-3.5 px-6 resize-none"
+        className={classNames(
+          classname,
+          "bg-[#FEFEFE] rounded-xl text-base placeholder:text-[#909090] placeholder:text-light w-full border border-[#BFBEBE] py-3.5 px-6 resize-none"
+        )}
       ></textarea>
       {errorText ? (
         <span className="text-xs text-red-600">{errorText}</span>
