@@ -205,6 +205,7 @@ const Payment = () => {
                 name="payment_type"
                 className="w-6 h-6 flex"
                 value="va-bni"
+                disabled={true}
               />
             </div>
           </div>
